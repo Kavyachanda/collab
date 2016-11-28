@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>login Forms</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="lib/angular.min.js"></script> 
+<!--  <script type="text/javascript" src="lib/angular-route.min.js"></script>  -->
+  
+      <style>
+      body{
+      padding-top:100px;
+      }
+      </style>
+
+   </head>
+   <body  data-ng-app = "myjobApp" data-ng-controller = "jobController as cntrl">
+   
+   <div ng-repeat = "job in cntrl.jobs">
+    {{job.id}}
+    {{job.title}}
+    
+   </div>
+    <script src="js/jobcntrl.js"></script> 
+     <script src="js/jobservice.js"></script> 
+     
+  </body>
+  </html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="com.niit.collabfrontend">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/" source-path="/WebContent/html"/>
+        <wb-resource deploy-path="/" source-path="/WebContent/js"/>
+        <wb-resource deploy-path="/" source-path="/WebContent/lib"/>
+        <property name="context-root" value="com.niit.collabfrontend"/>
+        <property name="java-output-path" value="/com.niit.collabfrontend/build/classes"/>
+    </wb-module>
+</project-modules>
