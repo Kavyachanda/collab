@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ngRoute','regmyApp','blogapp']);
+var app = angular.module('myApp', ['ngRoute','regmyApp','blogapp','forumApp']);
 
 app.config(function($routeProvider) {
   $routeProvider
@@ -23,10 +23,11 @@ app.config(function($routeProvider) {
     controller  : 'Forumcontroller'
  })
 
+  .when('/job', {
+    templateUrl : 'html/job.html',
+    controller  : 'Jobcontroller'
+ })
+
 
   .otherwise({redirectTo: '/'});
 });
-
-
-
-

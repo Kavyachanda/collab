@@ -4,6 +4,7 @@ var BASE_URL = 'http://localhost:8081/collabbackend';
 
 $scope.getAllBlogs= function() {
 console.log("get all blogs")
+
 $http({
 method : 'GET',
 url : BASE_URL+'/blog'
@@ -14,6 +15,7 @@ $scope.blogs=data;
 alert("Error");
 });
 };
+
 $scope.submit = function() {
 console.log("create blog")
 
@@ -24,6 +26,7 @@ userid:$scope.userid,
 doc:$scope.doc,
 description : $scope.description,
 }
+
 $http({
 method : 'POST',
 url : BASE_URL + '/createblog',
@@ -39,8 +42,11 @@ $scope.getAllBlogs();
 alert("error");
 });
 };
+
+
 $scope.deleteblog=function(id){
-$http({
+
+	$http({
 method:'DELETE',
 url:BASE_URL+'/deleteblog/'+id
 }).success(function(data,status,headers,config){

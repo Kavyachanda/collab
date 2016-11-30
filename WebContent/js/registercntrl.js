@@ -43,23 +43,26 @@ app.controller('Registercontroller', [ '$scope', '$http', function($scope, $http
 			
 		
 		})
-		$http({
-			method : 'GET',
-			url : BASE_URL + '/users',
-			data : $scope.users
-		}).success(function(data, status, headers, config) {
-			$scope.username='';
-			$scope.password='';
-			$scope.confirmpassword='';
-			$scope.email='';
-			$scope.phone='';
-			
-		
-		})
-		
+	
 		
 		.error(function(data,status,headers,config){
 			alert("error");
 		});
 	};
+	
+	
+	$scope.getAllUsers= function() {
+		console.log("usersctrl")
+		console.log("get all users")
+		$http({
+			method : 'GET',
+			url : BASE_URL+'/users'
+		}).success(function(data, status, headers, config) {
+			$scope.users=data;
+			//alert(data); 
+		}).error(function(data, status, headers, config) {
+			alert("Error");
+		});
+	};
+			
 }]);
