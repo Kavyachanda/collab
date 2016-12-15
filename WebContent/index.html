@@ -6,16 +6,73 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="lib/angular.min.js"></script>
 <script type="text/javascript" src="lib/angular-route.min.js"></script>
+<script type="text/javascript" src="lib/angular-cookies.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.1/sockjs.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
  
  
 <script src="cntrl1.js"></script>
 <script src="js/blogcntrl.js"></script>
 <script src="js/registercntrl.js"></script>
 <script src="js/logincntrl.js"></script>
+<script src="js/loginservice.js"></script>
+<script src="js/chatcntrl.js"></script>
+<script src="js/chatservice.js"></script>
 <script src="js/forumcntrl.js"></script>
+<script src="js/friendcntrl.js"></script>
+<script src="js/myfrndscntrl.js"></script>
+<script src="js/jobcntrl.js"></script>
+<script src="js/commentcntrl.js"></script>
+<script src="js/bcommentcntrl.js"></script>
+
+
+ <style>
+body{
+padding-top:100px;
+
+}
+
+</style> 
 
 </head>
-<body data-ng-app="myApp">
+
+<body data-ng-app="myApp" >
+<div class="container">
+    <nav class="navbar navbar-default navbar-xs" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    
+    <a class="navbar-brand" href="#/">Home</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li><a href="#/blog">Blog</a></li>
+      <li><a href="#/forum">Forum</a></li>
+     <li><a href="#/friend">Friends</a></li>
+     <li><a href="#/chat">Chat</a></li>
+     
+     <li><a href="#/job">Jobs</a></li>
+     </ul>
+    
+    <ul class="nav navbar-nav navbar-right">
+     <li><a href="#/register" data-ng-hide="globals.currentUser.islogged"><i class="glyphicon glyphicon-user"></i></a></li>
+     <li><a href="#/login" data-ng-hide="globals.currentUser.islogged"><i class="glyphicon glyphicon-log-in"></i></a></li>
+     <li style="padding-top:15px;" data-ng-show="globals.currentUser.islogged">Welcome:{{globals.currentUser.username}}</li>
+     <li data-ng-show="globals.currentUser.islogged"><a href="#/Userprofile">My Profile</a></li>
+     <li data-ng-show="globals.currentUser.islogged"><a href="" data-ng-click="vm.logout()">logout</a></li>
+    </ul>{{currentuser.id}}
+  </div><!-- /.navbar-collapse -->
+  
+</nav>
+</div>
+
+
+
+<!-- <body data-ng-app="myApp">
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
@@ -24,9 +81,13 @@
       <li><a href="#/register">register</a></li> 
       <li><a href="#/blog">blog</a></li> 
       <li><a href="#/forum">forum</a></li> 
+      <li><a href="#/friend">friend</a></li>
+      <li><a href="#/job">job</a></li>
+      <li><a href="#/chat">chat</a></li>
+         
     </ul>
   </div>
-</nav>
+</nav> -->
 
 <div data-ng-view></div>
 

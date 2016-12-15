@@ -1,0 +1,25 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="lib/angular.min.js"></script>
+<script type="text/javascript" src="lib/angular-route.min.js"></script>
+<script type="text/javascript" src="js/myfrndscntrl.js"></script>
+ 
+
+</head>
+
+<body data-ng-app="app1">
+<h1 style="align:center">New Requests</h1>
+<div data-ng-controller="myfrndscntrl">
+<div data-ng-init="getsnewrequests()">
+<div data-ng-repeat="request in newrequest">
+{{request.userid}}
+<button data-ng-click="accept(request.userid)">Accept</button>
+<button data-ng-click="reject(request.userid)">Reject</button>
+</div>
+</div>
+</div>
+</body>
+</html> 

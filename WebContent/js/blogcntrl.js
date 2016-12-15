@@ -53,9 +53,26 @@ url:BASE_URL+'/deleteblog/'+id
 $scope.getAllBlogs();
 })
 };
+
 $scope.editblog=function(id,title,description){
 $scope.id=id;
 $scope.title=title;
 $scope.description=description;
 }
+
+$scope.getblog=function(id){
+	
+	console.log("iblog")
+	$http({
+		method: "GET",
+		url:BASE_URL+'/individualblog/'+id,
+	}).success(function(data,status,headers,config){
+		$location.path('/individualblog');
+		$rootScope.individualblogs=data;
+		console.log(data)
+	}).error(function(data, status, headers, config) {
+		alert("Error");
+	});
+}
+
 }]);

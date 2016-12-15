@@ -16,6 +16,7 @@ border-radius:1px;
 
   body{
       padding-top:100px;
+      
       }
 </style>
 </head>
@@ -60,7 +61,7 @@ border-radius:1px;
 <div class="row">
 <div class="span3">
 <div class="well">
-<h2 class="text-info">{{blog.title}}</h2> 
+<h2 class="text-info"><a href=""data-ng-click="getblog(blog.id)">{{blog.title}}</a></h2> 
 <hr> 
 <p>{{blog.description}}</p>
 <hr>

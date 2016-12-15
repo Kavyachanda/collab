@@ -1,21 +1,34 @@
-var app = angular.module('myjobApp',[]);
-
-app.controller('jobController',['JobService',function(JobService){
-	
-		var self = this;
-		self.job = {id:'',title:'',company:'',jobdetails:'',doc:'',lastdate:'',userid:''};
-	    self.jobs = []
-		self.getAllJobs = function(){
-		
-		console.log("calling all jobs");
-		JobService.getAllJobs()
-				  .then(
-						  function(data){
-							  self.jobs = data;
-						  }
-				  )
-	
+var app = angular.module('jobApp',[]);
+app.controller('Jobcontroller', ['$scope','$http',function($scope,$http) {
+	var BASE_URL = 'http://localhost:8081/collabbackend';
+	$scope.submit=function(){
+		console.log("job")
+		$scope.job = {	
+				title : $scope.title,
+				company:$scope.company,
+				jobdetails:$scope.jobdetails,
+				lastdate: $scope.lastdate
+			}
+		$http({
+			method : 'POST',
+			url : BASE_URL+'/createjob'
+		}).success(function(data, status, headers, config) {
+			$scope.users=data;
+			//alert(data); 
+		}).error(function(data, status, headers, config) {
+			alert("Error");
+		});
 	};
-	self.getAllJobs();
-	
-}]);
+
+	$scope.getjobs=function(){
+		$http({
+			method : 'GET',
+			url : BASE_URL+'/job'
+		}).success(function(data, status, headers, config) {
+			$scope.jobs=data;
+			//alert(data); 
+		}).error(function(data, status, headers, config) {
+			alert("Error");
+		})
+	};
+}])

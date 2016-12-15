@@ -9,13 +9,14 @@
 <script type="text/javascript" src="js/jobcntrl.js"></script>
 </head>
 <body data-ng-app="jobApp">
-<form action="" data-ng-controller="Jobcontroller" data-ng-submit="submit()" >
-title:<input type="text" data-ng-model="title">
-company:<input type="text" data-ng-model="company">
-jobdetails:<input type="text" data-ng-model="jobdetails">
- date:<input type="date" data-ng-model="lastdate">
- <input type="submit">
-</form>
+<div data-ng-init="getjobs()">
+<div data-ng-repeat="job in jobs">
+{{job.title}}
+{{job.company}}
+{{job.jobdetails}}
+{{job.lastdate | date:'dd/MM/yyyy'}}
+</div>
+</div>
 
 </body>
 </html>
