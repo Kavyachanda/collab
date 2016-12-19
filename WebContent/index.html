@@ -55,7 +55,7 @@ padding-top:100px;
      <li><a href="#/friend">Friends</a></li>
      <li><a href="#/chat">Chat</a></li>
      
-     <li><a href="#/job">Jobs</a></li>
+     <li data-ng-show="globals.currentUser.islogged"><a href="#/job">Jobs</a></li>
      </ul>
     
     <ul class="nav navbar-nav navbar-right">
@@ -63,7 +63,7 @@ padding-top:100px;
      <li><a href="#/login" data-ng-hide="globals.currentUser.islogged"><i class="glyphicon glyphicon-log-in"></i></a></li>
      <li style="padding-top:15px;" data-ng-show="globals.currentUser.islogged">Welcome:{{globals.currentUser.username}}</li>
      <li data-ng-show="globals.currentUser.islogged"><a href="#/Userprofile">My Profile</a></li>
-     <li data-ng-show="globals.currentUser.islogged"><a href="" data-ng-click="vm.logout()">logout</a></li>
+     <li data-ng-show="globals.currentUser.islogged"><a href="#/" data-ng-click="vm.logout()">logout</a></li>
     </ul>{{currentuser.id}}
   </div><!-- /.navbar-collapse -->
   

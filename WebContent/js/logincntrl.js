@@ -39,7 +39,7 @@ app.controller('Logincontroller', function($scope) {
                $rootScope.username=vm.username;
               $rootScope.islogged=true;
                 	AuthenticationService.SetCredentials(vm.username, vm.password);
-                    $location.path('#/');
+                    $location.path('#/index');
                   $rootScope.islogged=true;
                 	
                 } else {

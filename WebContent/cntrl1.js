@@ -1,5 +1,5 @@
 
-var app = angular.module('myApp', ['ngRoute','ngCookies','regmyApp','blogapp','forumApp','friendapp','jobApp','app1','chatApp','iforumApp','iblogApp']);
+var app = angular.module('myApp', ['ngRoute','ngCookies','regmyApp','blogapp','forumApp','friendapp','jobApp','app1','chatApp','iforumApp','iblogApp'])
 
 app.config(function($routeProvider,$locationProvider) {
   $routeProvider

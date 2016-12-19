@@ -5,7 +5,7 @@ app.controller('bcommentcntrl', [ '$scope', '$http','$rootScope', function($scop
 	$scope.iblog=$rootScope.individualblogs;
 	console.log('individualblogs');
 	$scope.submit=function(id){
-		$scope.forumcomment={
+		$scope.blogcomment={
 				comment:$scope.comment
 		}
 		console.log('inside iblog');
